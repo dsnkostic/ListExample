@@ -6,6 +6,7 @@ class LinkedList[T](val value: T, val next: DList[T]) extends DList[T] {
   override def toString: String = {
     def enumerateAll(list: DList[T]): String = {
       if (list.isEmpty) ""
+      else if (list.next.isEmpty) "" + list.value
       else list.value + ", " + enumerateAll(list.next)
     }
     "[" + enumerateAll(this) + "]"
